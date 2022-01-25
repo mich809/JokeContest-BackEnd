@@ -1,5 +1,7 @@
 package com.CaridadMichael.JokeContest.Joke;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,10 @@ public class JokeService {
 		updateJoke.setJoke(updateJoke.getJoke());
 		updateJoke.setRating(updateJoke.getRating() - 1);
 		return jokeRepo.save(updateJoke);
+	}
+	
+	public List<Joke> getTopTenJokes(){
+		return jokeRepo.getTopTenJokes();
 	}
 
 }

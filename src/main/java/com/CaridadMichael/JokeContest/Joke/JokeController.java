@@ -4,8 +4,10 @@ package com.CaridadMichael.JokeContest.Joke;
 
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,6 +39,11 @@ public class JokeController {
 	public Joke downVote(@RequestBody Joke joke) {
 		return jokeService.downVote(joke);
 		
+	}
+	
+	@GetMapping(value = "/topTen")
+	public List<Joke> getTopTen(){
+		return jokeService.getTopTenJokes();
 	}
 	 
 	 
