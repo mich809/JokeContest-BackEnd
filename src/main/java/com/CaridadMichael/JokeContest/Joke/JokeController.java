@@ -45,6 +45,11 @@ public class JokeController {
 	public List<Joke> getTopTen(){
 		return jokeService.getTopTenJokes();
 	}
+	
+	@GetMapping(value = "/randomJoke")
+	public Joke getRandomJoke() {
+		return jokeService.getRandomJoke();
+	}
 	 
 	 
 	 

@@ -37,5 +37,9 @@ public class JokeService {
 	public List<Joke> getTopTenJokes(){
 		return jokeRepo.getTopTenJokes();
 	}
+	
+	public Joke getRandomJoke() {
+		return jokeRepo.getRandomJoke();
+	}
 
 }

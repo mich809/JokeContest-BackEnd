@@ -11,4 +11,7 @@ public interface JokeRepository extends CrudRepository<Joke,Long> {
 
 	@Query(value="select * from joke.joke order by rating desc limit 5", nativeQuery=true)
 	List<Joke> getTopTenJokes();
+	
+	@Query(value= "SELECT * FROM joke.joke ORDER BY RAND() LIMIT 1", nativeQuery=true)
+	Joke getRandomJoke();
 }
